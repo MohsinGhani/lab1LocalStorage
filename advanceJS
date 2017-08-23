@@ -1,0 +1,44 @@
+<script>
+//create student Array
+studentNames = ["Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan",
+    "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir",
+    "Adam", "Adam-James", "Addison", "Addisson", "Adegbola", "Adegbolahan", "Aden", "Adenn", "Adie", "Adil", "Aditya", "Adnan",
+    "Adrian", "Adrien", "Aedan", "Aedin", "Aedyn", "Aeron", "Afonso", "Ahmad", "Ahmed", "Ahmed-Aziz", "Ahoua", "Ahtasham",
+    "Aiadan", "Aidan", "Aiden", "Aiden-Jack", "Aiden-Vee", "Aidian", "Aidy", "Ailin", "Aiman", "Ainsley", "Ainslie", "Airen",
+    "George", "Georgia", "Georgy", "Gerard", "Ghyll", "Giacomo", "Gian", "Giancarlo", "Gianluca", "Gianmarco", "Gideon", "Gil",
+    "Gio", "Girijan", "Girius", "Gjan", "Glascott", "Glen", "Glenn", "Gordon", "Grady", "Graeme", "Graham", "Grahame", "Grant",
+    "Grayson", "Greg", "Gregor", "Gregory", "Greig", "Griffin", "Griffyn", "Grzegorz", "Guang", "Guerin", "Guillaume", "Gurardass", 
+    "Pablo", "Pacey", "Padraig", "Paolo", "Pardeepraj", "Parkash"]
+
+//this function is construct Student we will pass an object in this function
+    function Student ({name,id,persentage}){
+        this.id = id
+        this.name = name;
+        this.persentage = persentage 
+    }
+
+    Student.prototype.study = function(){
+        console.log(this.name + ' is studing');
+    }
+
+    var students = [];
+//this loop create a object of student and call the construct function with an object and push this student in students array
+    for(var i = 100; i < 200; i++){
+        students.push(new Student(
+            {
+                name: studentNames[i-100],
+                id: i,
+                persentage: Math.floor(Math.random() * 100) + "%"
+            }
+    )
+    )}
+
+//print students in console of browser
+    for(var i = 0; i < 100; i++){
+        console.log(students[i]);
+        students[i].study()
+    }
+    
+    
+ // task: You have to print this data in html file using document.create element etc
+    </script>
