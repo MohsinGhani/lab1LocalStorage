@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <ul id="students">
+        
+    </ul>
+ <script>
+    studentNames = ["Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan",
+                    "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir",
+                    "Adam", "Adam-James", "Addison", "Addisson", "Adegbola", "Adegbolahan", "Aden", "Adenn", "Adie", "Adil", "Aditya", "Adnan",
+                    "Adrian", "Adrien", "Aedan", "Aedin", "Aedyn", "Aeron", "Afonso", "Ahmad", "Ahmed", "Ahmed-Aziz", "Ahoua", "Ahtasham",
+                    "Aiadan", "Aidan", "Aiden", "Aiden-Jack", "Aiden-Vee", "Aidian", "Aidy", "Ailin", "Aiman", "Ainsley", "Ainslie", "Airen",
+                    "George", "Georgia", "Georgy", "Gerard", "Ghyll", "Giacomo", "Gian", "Giancarlo", "Gianluca", "Gianmarco", "Gideon", "Gil",
+                    "Gio", "Girijan", "Girius", "Gjan", "Glascott", "Glen", "Glenn", "Gordon", "Grady", "Graeme", "Graham", "Grahame", "Grant",
+                    "Grayson", "Greg", "Gregor", "Gregory", "Greig", "Griffin", "Griffyn", "Grzegorz", "Guang", "Guerin", "Guillaume", "Gurardass", 
+                    "Pablo", "Pacey", "Padraig", "Paolo", "Pardeepraj", "Parkash"]
+
+
+    function Student ({name,id,persentage}){
+        this.id = id
+        this.name = name;
+        this.persentage = persentage 
+    }
+
+    Student.prototype.study = function(){
+        console.log(this.name + ' is studing');
+    }
+
+    var students = [];
+    for(var i = 100; i < 200; i++){
+        students.push(new Student(
+            {
+                name: studentNames[i-100],
+                id: i,
+                persentage: Math.floor(Math.random() * 100) + "%"
+            }
+    )
+    )}
+
+    for(var i = 0; i < 100; i++){
+        console.log(students[i]);
+        students[i].study()
+    }
+    for(var i = 0; i < 100; i++){
+        var para = document.createElement("li");
+        var node = document.createTextNode("ID: " + students[i].id + " NAME: " +  students[i].name + " Persentage: " + students[i].persentage);
+        para.appendChild(node);
+        var element = document.getElementById("students");
+        element.appendChild(para);
+    }
+
+</script>
+</body>
+</html>
