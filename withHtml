@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
 
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
 </head>
 <body>
-    <ul id="students">
-        
-    </ul>
+    <table id="stuInfo">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PER %</th>
+            <th>ACTION</th>
+        </tr>
+    </table>
+    <ul id="students"></ul>
  <script>
     studentNames = ["Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan",
                     "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir",
@@ -54,6 +76,20 @@
         para.appendChild(node);
         var element = document.getElementById("students");
         element.appendChild(para);
+    }
+
+    var table = document.getElementById("stuInfo");
+    for(var i = 0; i < 100; i++){
+        var row = table.insertRow(i+1);
+        var id = row.insertCell(0);
+        var stuName = row.insertCell(1);
+        var per = row.insertCell(2);
+        var dlt = row.insertCell(3);
+
+        id.innerHTML = students[i].id;
+        stuName.innerHTML = students[i].name;
+        per.innerHTML = students[i].persentage;
+        dlt.innerHTML = "Delete";
     }
 
 </script>
