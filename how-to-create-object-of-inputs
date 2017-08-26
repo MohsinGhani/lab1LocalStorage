@@ -1,0 +1,27 @@
+<input type="text" id="name" name="name" placeholder="Name">
+<input type="text" id="id" name="id" placeholder="Id">
+<input type="text" id="phone" name="phone" placeholder="Phone">
+<input type="email" id="email" name="email" placeholder="Email">
+<button onclick="add()">ADD</button>
+
+<script>
+    var object = {
+        name: '',
+        id: '',
+        phone: '',
+        email: ''
+    }
+
+    function add() {
+        var name = document.getElementById('name').value;
+        var id = document.getElementById('id').value;
+        var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+
+        object.name = name;
+        object.id = id;
+        object.phone = phone;
+        object.email = email;
+        console.log(object)
+    }
+</script>
